@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngân hàng Thế giới (WBG) - Infographic</title>
+    <title>Quỹ Tiền tệ Quốc tế (IMF) - Infographic</title>
     <style>
         :root {
-            --primary-blue: #005596;
-            --secondary-blue: #0071bc;
-            --dark-blue: #002244;
-            --light-blue: #e6f2f9;
-            --accent-orange: #f26522;
+            --primary-blue: #004b87;
+            --dark-blue: #001f3f;
+            --accent-gold: #f2a900;
+            --light-blue: #e8f4f8;
             --white: #ffffff;
             --gray: #f4f5f7;
             --text-dark: #333333;
@@ -35,7 +34,6 @@
             line-height: 1.6;
         }
 
-        /* Hiệu ứng hoạt ảnh */
         .fade-in {
             opacity: 0;
             transform: translateY(40px);
@@ -47,7 +45,6 @@
             transform: translateY(0);
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -70,10 +67,9 @@
         }
 
         nav a:hover {
-            color: var(--accent-orange);
+            color: var(--accent-gold);
         }
 
-        /* Container chung */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -84,7 +80,6 @@
             padding: 100px 0 60px;
         }
 
-        /* Cấu trúc Tiêu đề Infographic */
         h2.section-title {
             text-align: center;
             color: var(--dark-blue);
@@ -99,13 +94,12 @@
             content: '';
             width: 80px;
             height: 5px;
-            background-color: var(--accent-orange);
+            background-color: var(--accent-gold);
             display: block;
             margin: 15px auto 0;
             border-radius: 5px;
         }
 
-        /* Quản lý Hình ảnh CSS */
         .img-responsive {
             width: 100%;
             height: auto;
@@ -115,14 +109,13 @@
             object-fit: cover;
         }
 
-        /* Phần 1: Hero / Tổng quan */
+        /* Phần Tổng quan */
         .hero-section {
             background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
             color: var(--white);
             padding: 120px 20px 80px;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-title {
@@ -131,11 +124,11 @@
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            color: var(--accent-gold);
         }
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: var(--accent-orange);
             margin-bottom: 40px;
             font-weight: bold;
         }
@@ -146,39 +139,20 @@
             gap: 40px;
             align-items: center;
             margin-top: 40px;
-            text-align: left;
-        }
-
-        .hero-image-wrapper img {
-            max-height: 450px;
-            border: 4px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .stat-box {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 25px;
             border-radius: 10px;
-            border-left: 5px solid var(--accent-orange);
+            border-left: 5px solid var(--accent-gold);
+            text-align: left;
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--white);
-            margin-bottom: 10px;
-        }
-
-        /* Phần 2: Lịch sử hình thành (Timeline Infographic) */
-        .timeline-section {
-            background-color: var(--white);
-        }
-
+        /* Phần Lịch sử */
         .timeline {
             position: relative;
             max-width: 900px;
@@ -190,7 +164,7 @@
             content: '';
             position: absolute;
             width: 6px;
-            background-color: var(--secondary-blue);
+            background-color: var(--primary-blue);
             top: 0;
             bottom: 0;
             left: 50%;
@@ -215,12 +189,12 @@
             width: 24px;
             height: 24px;
             right: -12px;
-            background-color: var(--accent-orange);
+            background-color: var(--accent-gold);
             border: 4px solid var(--white);
             top: 20px;
             border-radius: 50%;
             z-index: 1;
-            box-shadow: 0 0 0 4px var(--secondary-blue);
+            box-shadow: 0 0 0 4px var(--primary-blue);
         }
 
         .timeline-item.right::after { left: -12px; }
@@ -230,13 +204,12 @@
             background-color: var(--light-blue);
             border-radius: 12px;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--secondary-blue);
+            border-top: 5px solid var(--primary-blue);
         }
 
         .timeline-date {
             display: inline-block;
-            background-color: var(--secondary-blue);
+            background-color: var(--primary-blue);
             color: var(--white);
             padding: 5px 15px;
             border-radius: 20px;
@@ -245,113 +218,60 @@
             margin-bottom: 15px;
         }
 
-        .timeline-img {
-            margin-top: 15px;
-            max-height: 220px;
-            border-radius: 8px;
-        }
-
-        /* Phần 3: Sứ mệnh & Mục tiêu */
-        .mission-section {
-            background-color: var(--dark-blue);
-            color: var(--white);
-        }
-
-        .mission-section h2.section-title {
-            color: var(--white);
-        }
-
-        .mission-grid {
+        /* Phần Hoạt động */
+        .activities-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        .mission-text-blocks {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .mission-card {
-            background-color: rgba(255, 255, 255, 0.05);
+        .activity-card {
+            background-color: var(--white);
             padding: 30px;
             border-radius: 12px;
-            border-left: 5px solid var(--accent-orange);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--accent-gold);
         }
 
-        .mission-card h3 {
+        .activity-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
             font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--accent-orange);
         }
 
-        .mission-image img {
-            max-height: 500px;
-            border: 5px solid var(--light-blue);
-        }
-
-        /* Phần mới: Đánh giá Toàn diện */
-        .eval-section {
-            background-color: var(--white);
-        }
-
+        /* Phần Đánh giá */
         .eval-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
         .eval-card {
-            background-color: var(--gray);
-            padding: 35px 25px;
+            background-color: var(--white);
+            padding: 35px;
             border-radius: 12px;
-            border-top: 6px solid;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
         }
 
-        .eval-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .eval-card.achieve { border-color: var(--correct-green); }
-        .eval-card.limit { border-color: var(--wrong-red); }
-        .eval-card.challenge { border-color: var(--accent-orange); }
-
-        .eval-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 20px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .eval-card.opp { border-left: 6px solid var(--correct-green); }
+        .eval-card.chal { border-left: 6px solid var(--wrong-red); }
 
         .eval-card h3 {
-            text-align: center;
             font-size: 1.6rem;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
 
-        .achieve h3 { color: var(--correct-green); }
-        .limit h3 { color: var(--wrong-red); }
-        .challenge h3 { color: var(--accent-orange); }
+        .opp h3 { color: var(--correct-green); }
+        .chal h3 { color: var(--wrong-red); }
 
-        .eval-card ul {
-            list-style-type: none;
-        }
-
+        .eval-card ul { list-style-type: none; }
         .eval-card ul li {
             position: relative;
-            padding-left: 25px;
+            padding-left: 20px;
             margin-bottom: 15px;
-            font-size: 1.05rem;
         }
-
         .eval-card ul li::before {
             content: '•';
             position: absolute;
@@ -359,153 +279,42 @@
             font-size: 1.5rem;
             line-height: 1;
         }
+        .opp ul li::before { color: var(--correct-green); }
+        .chal ul li::before { color: var(--wrong-red); }
 
-        .achieve ul li::before { color: var(--correct-green); }
-        .limit ul li::before { color: var(--wrong-red); }
-        .challenge ul li::before { color: var(--accent-orange); }
-
-        /* Phần 5: Quan hệ Việt Nam và WBG */
-        .vn-wbg-section {
-            background-color: var(--gray);
-        }
-
-        .vn-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .vn-image img {
-            max-height: 450px;
-        }
-
-        .stats-container {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .stat-item {
-            margin-bottom: 25px;
-        }
-
-        .stat-label {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: var(--dark-blue);
-            font-size: 1.1rem;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 24px;
-            background-color: #eee;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary-blue), var(--primary-blue));
-            width: 0;
-            transition: width 2s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        /* Phần 6: Trắc nghiệm */
-        .quiz-section {
-            background-color: var(--light-blue);
-        }
-
-        .quiz-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        /* Trắc nghiệm */
+        .quiz-container { max-width: 800px; margin: 0 auto; }
         .question-block {
             background: var(--white);
-            border: 2px solid var(--secondary-blue);
+            border: 2px solid var(--primary-blue);
             padding: 30px;
             margin-bottom: 25px;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
-
         .question-text {
-            font-size: 1.3rem;
-            font-weight: 900;
+            font-size: 1.2rem;
+            font-weight: bold;
             margin-bottom: 20px;
             color: var(--dark-blue);
         }
-
-        .options {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-
+        .options { display: grid; gap: 10px; }
         .option {
             padding: 15px 20px;
             background-color: var(--gray);
-            border: 2px solid transparent;
             border-radius: 8px;
-            font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
-            display: flex;
-            align-items: center;
         }
+        .option.correct { background-color: var(--correct-green); color: white; }
+        .option.wrong { background-color: var(--wrong-red); color: white; }
 
-        .option::before {
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            border: 2px solid #ccc;
-            margin-right: 15px;
-        }
-
-        .option:hover {
-            background-color: #e2e6ea;
-            border-color: var(--secondary-blue);
-        }
-
-        .option.correct {
-            background-color: var(--correct-green);
-            color: white;
-            border-color: var(--correct-green);
-        }
-
-        .option.correct::before {
-            background-color: white;
-            border-color: white;
-        }
-
-        .option.wrong {
-            background-color: var(--wrong-red);
-            color: white;
-            border-color: var(--wrong-red);
-        }
-
-        .option.wrong::before {
-            background-color: white;
-            border-color: white;
-        }
-
-        /* Responsive */
         @media screen and (max-width: 900px) {
-            .hero-grid, .mission-grid, .vn-grid { grid-template-columns: 1fr; }
+            .hero-grid, .eval-grid { grid-template-columns: 1fr; }
             .timeline::after { left: 31px; }
             .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
             .timeline-item.right { left: 0%; }
             .timeline-item.left::after, .timeline-item.right::after { left: 19px; }
             nav a { margin: 0 5px; font-size: 11px; }
-            .hero-title { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -514,231 +323,167 @@
     <nav>
         <a href="#tong-quan">Tổng quan</a>
         <a href="#lich-su">Lịch sử</a>
-        <a href="#su-menh">Sứ mệnh</a>
-        <a href="#danh-gia">Đánh giá</a>
+        <a href="#hoat-dong">Hoạt động</a>
         <a href="#viet-nam">Việt Nam</a>
         <a href="#trac-nghiem">Trắc nghiệm</a>
     </nav>
 
+    <!-- Phần 1: Tổng quan -->
     <section id="tong-quan" class="hero-section">
         <div class="container fade-in">
-            <h1 class="hero-title">Ngân hàng Thế giới</h1>
-            <div class="hero-subtitle">World Bank Group (WBG)</div>
+            <h1 class="hero-title">Quỹ Tiền tệ Quốc tế</h1>
+            <div class="hero-subtitle">International Monetary Fund (IMF)</div>
             
             <div class="hero-grid">
-                <div class="hero-content">
-                    <p style="font-size: 1.2rem; margin-bottom: 30px;">Tổ chức tài chính quốc tế hàng đầu cung cấp các khoản vay, tín dụng và viện trợ không hoàn lại cho chính phủ các nước có thu nhập thấp và trung bình nhằm thúc đẩy đầu tư vốn và phát triển kinh tế.</p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-box">
-                            <div class="stat-number">189</div>
-                            <div>Quốc gia thành viên tham gia tổ chức</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">130+</div>
-                            <div>Văn phòng đại diện trên toàn cầu</div>
-                        </div>
-                    </div>
+                <div class="stat-box">
+                    <p style="font-size: 1.2rem;">Tổ chức tài chính quốc tế thuộc Liên Hợp Quốc được thành lập trong khuôn khổ thỏa thuận Bretton Woods, đóng vai trò trung tâm của hệ thống tiền tệ quốc tế. Mục đích chính là thúc đẩy hợp tác tiền tệ quốc tế, ổn định tỷ giá, tạo điều kiện thuận lợi cho tăng trưởng thương mại và tài chính toàn cầu.</p>
                 </div>
-                
-                <div class="hero-image-wrapper">
-                    <img src="World_Bank_building_at_Washington.jpg" alt="Trụ sở Ngân hàng Thế giới tại Washington" class="img-responsive">
+                <div>
+                    <!-- Sử dụng hình ảnh lá cờ IMF cho phần giới thiệu -->
+                    <img src="imfflag.jpg" alt="Lá cờ Quỹ Tiền tệ Quốc tế" class="img-responsive">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="lich-su" class="timeline-section">
+    <!-- Phần 2: Lịch sử -->
+    <section id="lich-su">
         <div class="container">
-            <h2 class="section-title fade-in">Hành trình Lịch sử</h2>
+            <h2 class="section-title fade-in">Lịch sử Hình thành</h2>
             
             <div class="timeline">
                 <div class="timeline-item left fade-in">
                     <div class="timeline-content">
-                        <span class="timeline-date">Tháng 7 năm 1944</span>
+                        <span class="timeline-date">Năm 1944</span>
                         <h3>Hội nghị Bretton Woods</h3>
-                        <p>Thành lập cùng với Quỹ Tiền tệ Quốc tế nhằm tái thiết lại hệ thống tài chính toàn cầu sau Thế chiến thứ hai.</p>
-                        <img src="17-Bretton-woods-conference.jpg" alt="Hội nghị Bretton Woods" class="img-responsive timeline-img">
+                        <p>Tại Hội nghị Bretton Woods ở Mỹ với sự tham gia của 44 nước, các đại biểu đã thống nhất soạn thảo điều lệ thành lập Quỹ Tiền tệ Quốc tế.</p>
+                        <img src="Bretton Woods conference.jpg" alt="Hội nghị Bretton Woods" class="img-responsive" style="margin-top: 15px;">
                     </div>
                 </div>
                 
                 <div class="timeline-item right fade-in">
                     <div class="timeline-content">
-                        <span class="timeline-date">Những nhà sáng lập</span>
-                        <h3>John Maynard Keynes & Harry Dexter White</h3>
-                        <p>Hai kiến trúc sư trưởng định hình cấu trúc và nguyên tắc hoạt động ban đầu của tổ chức.</p>
-                        <img src="keynes-brettons.jpg" alt="John Maynard Keynes" class="img-responsive timeline-img" style="object-position: top;">
+                        <span class="timeline-date">Tháng 12 năm 1945</span>
+                        <h3>Chính thức Hiệu lực</h3>
+                        <p>Ngày 27 tháng 12 năm 1945, IMF chính thức có hiệu lực khi 29 quốc gia đầu tiên phê chuẩn điều lệ, đánh dấu sự ra đời của tổ chức tài chính toàn cầu này.</p>
+                        <img src="keynes và dexter white.jpg" alt="John Maynard Keynes và Harry Dexter White" class="img-responsive" style="margin-top: 15px;">
                     </div>
                 </div>
 
                 <div class="timeline-item left fade-in">
                     <div class="timeline-content">
-                        <span class="timeline-date">Tháng 5 năm 1947</span>
-                        <h3>Khoản vay Đầu tiên</h3>
-                        <p>Cấp khoản vay lịch sử trị giá 250 triệu đô la Mỹ cho Pháp để phục vụ công cuộc tái thiết cơ sở hạ tầng sau chiến tranh.</p>
-                        <img src="world-bank-first-loan.jpg" alt="Khoản vay đầu tiên của WBG" class="img-responsive timeline-img">
+                        <span class="timeline-date">Năm 1974</span>
+                        <h3>Thành lập Ủy ban Cấp cao</h3>
+                        <p>Thành lập Ủy ban Tiền tệ và Tài chính Quốc tế là cơ quan tư vấn cấp cao của Hội đồng Thống đốc, gồm 24 thành viên.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Năm 1986</span>
+                        <h3>Đồng hành cùng Đổi mới</h3>
+                        <p>Với chính sách Đổi mới, Việt Nam bắt đầu hợp tác chặt chẽ trở lại với IMF trong việc cải cách kinh tế vĩ mô, ổn định tiền tệ và quản lý nợ nước ngoài.</p>
+                        <img src="vietnam 1986.jpg" alt="Việt Nam bước vào thời kỳ Đổi mới" class="img-responsive" style="margin-top: 15px;">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="su-menh" class="mission-section">
+    <!-- Phần 3: Hoạt động -->
+    <section id="hoat-dong" style="background-color: var(--light-blue);">
         <div class="container">
-            <h2 class="section-title fade-in">Mục tiêu Cốt lõi</h2>
+            <h2 class="section-title fade-in">Phương thức Hoạt động</h2>
             
-            <div class="mission-grid">
-                <div class="mission-image fade-in">
-                    <img src="end_extreme_poverty.jpg" alt="Mục tiêu chấm dứt nghèo cùng cực" class="img-responsive">
+            <!-- Chèn hình ảnh Trụ sở chính của IMF -->
+            <div class="fade-in" style="max-width: 900px; margin: 0 auto 40px auto;">
+                <img src="imfheadquarters.jpg" alt="Trụ sở Quỹ Tiền tệ Quốc tế" class="img-responsive">
+            </div>
+
+            <div class="activities-grid fade-in">
+                <div class="activity-card">
+                    <h3>Giám sát Nền Kinh tế</h3>
+                    <p>Thu thập dữ liệu kinh tế từ các quốc gia thành viên, phân tích dữ liệu và đưa ra đánh giá về tình hình kinh tế vĩ mô, đồng thời công bố báo cáo và khuyến nghị chính sách.</p>
                 </div>
                 
-                <div class="mission-text-blocks fade-in">
-                    <div class="mission-card">
-                        <h3>1. Chấm dứt Nghèo cùng cực</h3>
-                        <p>Mục tiêu giảm tỷ lệ người sống trong tình trạng nghèo cùng cực trên toàn cầu xuống dưới 3 phần trăm bằng cách cung cấp tài chính và tư vấn chính sách.</p>
-                    </div>
-                    
-                    <div class="mission-card">
-                        <h3>2. Thúc đẩy Thịnh vượng chung</h3>
-                        <p>Tăng trưởng thu nhập cho 40 phần trăm dân số nghèo nhất ở mọi quốc gia, đảm bảo sự phát triển công bằng và bền vững.</p>
-                    </div>
-                    
-                    <div class="mission-card">
-                        <h3>3. Ứng phó Biến đổi Khí hậu</h3>
-                        <p>Trở thành nhà tài trợ đa phương lớn nhất thế giới cho các hành động khí hậu tại các nước đang phát triển.</p>
-                    </div>
+                <div class="activity-card">
+                    <h3>Hỗ trợ Tài chính</h3>
+                    <p>Cho vay đối với các quốc gia thành viên gặp khó khăn về cán cân thanh toán, thường đi kèm với các điều kiện yêu cầu thực hiện cải cách kinh tế.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>Hỗ trợ Kỹ thuật và Đào tạo</h3>
+                    <p>Cung cấp hỗ trợ kỹ thuật và tổ chức các chương trình đào tạo để giúp các quốc gia cải thiện năng lực quản lý kinh tế vĩ mô, xây dựng chính sách tài khóa và tiền tệ.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="danh-gia" class="eval-section">
+    <!-- Phần 4: Việt Nam -->
+    <section id="viet-nam">
         <div class="container">
-            <h2 class="section-title fade-in">Đánh giá Toàn diện</h2>
+            <h2 class="section-title fade-in">Việt Nam và Hội nhập</h2>
             
+            <!-- Chèn hình ảnh cơ sở hạ tầng Việt Nam -->
+            <div class="fade-in" style="max-width: 1000px; margin: 0 auto 40px auto;">
+                <img src="Vietnam infrastructure development.jpg" alt="Phát triển cơ sở hạ tầng đô thị tại Việt Nam" class="img-responsive">
+            </div>
+
             <div class="eval-grid">
-                <div class="eval-card achieve fade-in">
-                    <svg class="eval-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                    <h3>Thành tựu</h3>
+                <div class="eval-card opp fade-in">
+                    <h3>Cơ hội và Lợi ích</h3>
                     <ul>
-                        <li>Tài trợ thành công hàng ngàn dự án hạ tầng cơ sở, y tế và giáo dục, góp phần nâng cao chất lượng sống tại các quốc gia đang phát triển.</li>
-                        <li>Đóng góp vai trò trọng tâm trong việc giảm mạnh tỷ lệ nghèo cùng cực trên quy mô toàn cầu trong suốt năm thập kỷ qua.</li>
-                        <li>Cung cấp nguồn vốn giải ngân nhanh chóng để ứng phó với các cuộc khủng hoảng tài chính và dịch bệnh toàn cầu.</li>
+                        <li>Cung cấp các khoản vay hỗ trợ cán cân thanh toán với lãi suất thấp, thời hạn dài khi Việt Nam gặp khó khăn về ngoại hối hoặc khủng hoảng tài chính.</li>
+                        <li>Được tham gia vào hệ thống tài chính toàn cầu, thúc đẩy niềm tin của các nhà đầu tư nước ngoài và nâng cao vị thế Việt Nam trên trường quốc tế.</li>
+                        <li>Nhận tư vấn về chính sách tài khóa, tiền tệ, quản lý nợ công, giúp Việt Nam hoàn thiện hệ thống kinh tế thị trường định hướng xã hội chủ nghĩa.</li>
                     </ul>
                 </div>
 
-                <div class="eval-card limit fade-in">
-                    <svg class="eval-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-                    </svg>
-                    <h3>Hạn chế</h3>
+                <div class="eval-card chal fade-in">
+                    <h3>Thách thức Dài hạn</h3>
                     <ul>
-                        <li>Các chương trình điều chỉnh cơ cấu đi kèm điều kiện vay vốn nghiêm ngặt đôi khi gây ra hệ lụy về mặt an sinh xã hội cho nước đi vay.</li>
-                        <li>Cơ chế phân bổ quyền biểu quyết dựa trên tỷ lệ góp vốn khiến các quốc gia phát triển duy trì sự chi phối lớn trong việc hoạch định chính sách.</li>
-                        <li>Một số siêu dự án phát triển công nghiệp và đập thủy điện trong quá khứ từng đối mặt với sự chỉ trích về tác động tiêu cực đến môi trường sinh thái.</li>
-                    </ul>
-                </div>
-
-                <div class="eval-card challenge fade-in">
-                    <svg class="eval-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.36 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM13 13v4h-2v-4H8l4-4 4 4h-3z"/>
-                    </svg>
-                    <h3>Thách thức hiện nay</h3>
-                    <ul>
-                        <li>Giải quyết bài toán nợ công đang gia tăng ở mức báo động tại nhiều quốc gia đang phát triển và kém phát triển.</li>
-                        <li>Đảm bảo huy động đủ nguồn lực tài chính khổng lồ để hỗ trợ quá trình chuyển đổi năng lượng và chống lại biến đổi khí hậu.</li>
-                        <li>Tái cơ cấu bộ máy tổ chức nhằm gia tăng tính minh bạch, linh hoạt và nâng cao tiếng nói cho các nền kinh tế mới nổi trên trường quốc tế.</li>
+                        <li>Nợ nước ngoài của Việt Nam đã đạt khoảng 146 tỷ USD vào năm 2022, thâm hụt ngân sách tạo ra áp lực tài khóa ngày càng lớn.</li>
+                        <li>Cơ cấu kinh tế hiện nay vẫn phụ thuộc lớn vào xuất khẩu và đầu tư trực tiếp nước ngoài, khiến nền kinh tế dễ bị tổn thương trước các biến động bên ngoài.</li>
+                        <li>Việc cân bằng giữa mục tiêu hỗ trợ tăng trưởng và duy trì kỷ luật tài khóa theo khuyến nghị của tổ chức là bài toán khó đòi hỏi sự linh hoạt.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="viet-nam" class="vn-wbg-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Đồng hành cùng Việt Nam</h2>
-            
-            <div class="vn-grid">
-                <div class="vn-text fade-in">
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Ngân hàng Thế giới là đối tác chiến lược, hỗ trợ mạnh mẽ cho hành trình phát triển của Việt Nam từ một quốc gia thiếu hụt trở thành nền kinh tế năng động, tập trung vào tính bền vững và chống biến đổi khí hậu.</p>
-                    
-                    <div class="stats-container">
-                        <h3 style="color: var(--dark-blue); margin-bottom: 20px; text-transform: uppercase;">Trọng tâm phân bổ viện trợ</h3>
-                        
-                        <div class="stat-item">
-                            <div class="stat-label">
-                                <span>Nông nghiệp bền vững & Chuyển đổi xanh</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="85%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="stat-item">
-                            <div class="stat-label">
-                                <span>Cơ sở hạ tầng & Giao thông</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="70%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="stat-item">
-                            <div class="stat-label">
-                                <span>Giáo dục & Nguồn nhân lực</span>
-                                <span>60%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="60%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="vn-image fade-in">
-                    <img src="Sustainable agriculture Mekong Delta.jpg" alt="Phát triển nông nghiệp bền vững tại Đồng bằng sông Cửu Long" class="img-responsive">
-                    <p style="text-align: center; margin-top: 10px; font-style: italic; color: #666; font-size: 0.9rem;">Dự án hỗ trợ nông nghiệp bền vững và thích ứng biến đổi khí hậu</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="trac-nghiem" class="quiz-section">
+    <!-- Phần 5: Trắc nghiệm -->
+    <section id="trac-nghiem" style="background-color: var(--light-blue);">
         <div class="container">
             <h2 class="section-title fade-in">Kiểm tra Kiến thức</h2>
             
             <div class="quiz-container fade-in">
                 <div class="question-block" id="q1">
-                    <div class="question-text">1. Những yếu tố nào sau đây được xem là một trong những hạn chế của Ngân hàng Thế giới?</div>
+                    <div class="question-text">1. Cơ quan quyền lực cao nhất của Quỹ Tiền tệ Quốc tế là gì?</div>
                     <div class="options">
-                        <div class="option" data-correct="false" onclick="checkAnswer(this)">A. Từ chối cung cấp vắc xin y tế cho các nước nghèo</div>
-                        <div class="option" data-correct="true" onclick="checkAnswer(this)">B. Các điều kiện cải cách cơ cấu khắt khe khi vay vốn</div>
-                        <div class="option" data-correct="false" onclick="checkAnswer(this)">C. Chỉ cho vay đối với các quốc gia thuộc châu Âu</div>
-                        <div class="option" data-correct="false" onclick="checkAnswer(this)">D. In thêm tiền để giải quyết lạm phát toàn cầu</div>
+                        <div class="option" data-correct="false" onclick="checkAnswer(this)">A. Ủy ban Tiền tệ và Tài chính Quốc tế</div>
+                        <div class="option" data-correct="true" onclick="checkAnswer(this)">B. Hội đồng Thống đốc</div>
+                        <div class="option" data-correct="false" onclick="checkAnswer(this)">C. Ban Giám đốc Điều hành</div>
+                        <div class="option" data-correct="false" onclick="checkAnswer(this)">D. Tổng Giám đốc</div>
                     </div>
                 </div>
 
                 <div class="question-block" id="q2">
-                    <div class="question-text">2. Khoản vay đầu tiên của WBG vào năm 1947 được cấp cho quốc gia nào?</div>
+                    <div class="question-text">2. Khoản vay của IMF dành cho các quốc gia thành viên thường được cấp trong trường hợp nào?</div>
                     <div class="options">
-                        <div class="option" data-correct="true" onclick="checkAnswer(this)">A. Pháp (Để tái thiết sau Thế chiến thứ hai)</div>
-                        <div class="option" data-correct="false" onclick="checkAnswer(this)">B. Vương quốc Anh</div>
-                        <div class="option" data-correct="false" onclick="checkAnswer(this)">C. Việt Nam</div>
-                        <div class="option" data-correct="false" onclick="checkAnswer(this)">D. Hoa Kỳ</div>
+                        <div class="option" data-correct="true" onclick="checkAnswer(this)">A. Khi quốc gia gặp khó khăn tạm thời về cán cân thanh toán</div>
+                        <div class="option" data-correct="false" onclick="checkAnswer(this)">B. Để tài trợ các chiến dịch quân sự quốc tế</div>
+                        <div class="option" data-correct="false" onclick="checkAnswer(this)">C. Để phân lô bán nền bất động sản thương mại</div>
+                        <div class="option" data-correct="false" onclick="checkAnswer(this)">D. Thay thế hoàn toàn ngân sách giáo dục quốc gia</div>
                     </div>
                 </div>
 
                 <div class="question-block" id="q3">
-                    <div class="question-text">3. Hiện nay, một trong những thách thức lớn nhất mà tổ chức này đang phải hợp tác giải quyết cùng các quốc gia đang phát triển là gì?</div>
+                    <div class="question-text">3. Theo đánh giá, một trong những rủi ro lớn đối với cấu trúc kinh tế của Việt Nam hiện nay là gì?</div>
                     <div class="options">
-                        <div class="option" data-correct="false" onclick="checkAnswer(this)">A. Nguy cơ thiếu hụt nguồn cung bất động sản</div>
-                        <div class="option" data-correct="false" onclick="checkAnswer(this)">B. Sự gia tăng quá mức của khách du lịch</div>
-                        <div class="option" data-correct="true" onclick="checkAnswer(this)">C. Khủng hoảng nợ công và biến đổi khí hậu</div>
-                        <div class="option" data-correct="false" onclick="checkAnswer(this)">D. Thiếu hụt không gian lưu trữ dữ liệu số</div>
+                        <div class="option" data-correct="false" onclick="checkAnswer(this)">A. Thiếu hụt hoàn toàn lực lượng lao động</div>
+                        <div class="option" data-correct="false" onclick="checkAnswer(this)">B. Giá trị đồng tiền nội tệ tăng quá mức</div>
+                        <div class="option" data-correct="true" onclick="checkAnswer(this)">C. Sự phụ thuộc lớn vào xuất khẩu và vốn đầu tư trực tiếp nước ngoài</div>
+                        <div class="option" data-correct="false" onclick="checkAnswer(this)">D. Sự cô lập hoàn toàn với thị trường quốc tế</div>
                     </div>
                 </div>
             </div>
@@ -746,27 +491,11 @@
     </section>
 
     <script>
-        // Hiệu ứng Fade-in và Kích hoạt Progress Bar khi cuộn trang
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    
-                    // Chạy animation cho thanh tiến trình
-                    const progressBars = entry.target.querySelectorAll('.progress-fill');
-                    progressBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 300);
-                    });
-                    
                     observer.unobserve(entry.target);
                 }
             });
@@ -776,10 +505,8 @@
             observer.observe(element);
         });
 
-        // Xử lý Logic Trắc nghiệm
         function checkAnswer(element) {
             const parent = element.parentElement.parentElement;
-            
             if (parent.classList.contains('answered')) return;
             parent.classList.add('answered');
             
